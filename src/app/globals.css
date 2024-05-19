@@ -16,6 +16,10 @@
   }
 }
 
+nav header {
+  max-width: 1350px !important;
+}
+
 .border-bottom-gradient {
   position: relative;
 }
