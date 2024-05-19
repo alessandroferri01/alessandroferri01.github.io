@@ -1,10 +1,17 @@
 "use client"
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 export default function Logo() {
+    const [mounted, setMounted] = useState(false)
     const { theme, setTheme } = useTheme()
+
+    useEffect(() => {
+        setMounted(true)
+      }, [])
+    
+    if(!mounted) return null
 
     return (
         <svg width="65px" height="65px" xmlns = "http://www.w3.org/2000/svg" viewBox = "166 102 308 308" >  
