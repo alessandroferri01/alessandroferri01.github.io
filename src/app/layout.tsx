@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Header from "./components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,8 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextUIProvider>
-          <Header />
-          {children}
+          <NextThemesProvider attribute="class" defaultTheme="light">
+            <Header />
+            {children}
+          </NextThemesProvider>
         </NextUIProvider>
       </body>
     </html>

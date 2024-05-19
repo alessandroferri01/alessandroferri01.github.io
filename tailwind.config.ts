@@ -33,6 +33,20 @@ const config: Config = {
           focus: "#00b3e6",
         },
       },
+      dark: {
+        colors: {
+          primary: {
+            DEFAULT: "#A64DFF",
+            foreground: "#000000",
+          },
+          secondary: {
+            DEFAULT: "#00b3e6",
+            foreground: "#000000",
+          },
+          focus: "#00b3e6",
+          background: "#121212"
+        },
+      },
     },
   })],
 };
