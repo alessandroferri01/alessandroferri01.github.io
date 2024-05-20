@@ -6,7 +6,9 @@ import ThemeSwitch from "./ThemeSwitch";
 
 export default function Header() {
   return (
-    <Navbar style={{height: "5.5rem"}} className="border-bottom-gradient">
+    <Navbar 
+      style={{ height: "5.5rem", position: "sticky" }} 
+      className="border-bottom-gradient">
       <NavbarBrand>
         <Logo />
       </NavbarBrand>
