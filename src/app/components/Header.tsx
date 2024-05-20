@@ -10,7 +10,9 @@ export default function Header() {
       style={{ height: "5.5rem", position: "sticky" }} 
       className="border-bottom-gradient">
       <NavbarBrand>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>
