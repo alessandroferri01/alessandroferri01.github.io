@@ -11,12 +11,9 @@ export default function Header() {
         <Logo />
       </NavbarBrand>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link color="secondary" href="#">Login</Link>
-        </NavbarItem>
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
+            Say Hello 😎
           </Button>
         </NavbarItem>
         <NavbarItem>
