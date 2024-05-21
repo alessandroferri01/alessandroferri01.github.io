@@ -66,6 +66,14 @@ footer {
   padding: 30px;
 }
 
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
 footer .icon {
   padding: 10px;
   border: 1.5px solid #00b3e6;
@@ -75,6 +83,13 @@ footer .icon {
 .hero-content .animation {
   width: 100%;
   margin-bottom: 60px;
+}
+
+@media screen and (min-width: 425px) {
+  .hero-background {
+    top: unset;
+    bottom: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
