@@ -85,6 +85,39 @@ footer .icon {
   margin-bottom: 60px;
 }
 
+.skills {
+  padding: 0px 25px 80px;
+}
+
+.skills .skill-card {
+  scale: 1;
+  transition: all .5s;
+  min-width: 140px;
+  min-height: 140px;
+}
+
+.skills .skill-card:hover {
+  scale: 1.1;
+}
+
+.skills .skill-card.negative * {
+  color: white !important
+}
+
+.skills .skill-card .skill-footer,
+.skills .skill-card .skill-header {
+  opacity: 0;
+  transition: all .5s;
+  backdrop-filter: blur(20px);
+}
+
+.skills .skill-card:hover .skill-footer,
+.skills .skill-card:focus .skill-footer, 
+.skills .skill-card:focus .skill-header, 
+.skills .skill-card:hover .skill-header {
+  opacity: 1;
+}
+
 @media screen and (min-width: 425px) {
   .hero-background {
     top: unset;
@@ -96,11 +129,19 @@ footer .icon {
   .hero-content .animation {
     width: 400px;
   }
+
+  .skills {
+    padding: 80px 25px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .hero-content .animation {
     width: 500px;
     margin-bottom: 30px;
+  }
+
+  .skills {
+    padding: 150px 25px;
   }
 }
