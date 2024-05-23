@@ -19,11 +19,11 @@ export default function HeroContent() {
             </div>
             <div className="title mt-4">
                 <motion.h1 
-                    className="text-center text-lg md:text-2xl xl:text-5xl font-bold"
+                    className="text-center text-3xl xl:text-6xl font-bold"
                     initial="hidden"
                     animate="visible"
                     variants={titleVariants}>
-                    <span style={{WebkitTextFillColor: "transparent"}} className="bg-clip-text bg-gradient-to-r from-[#6600cc]  to-[#00b3e6]">Softawer Engineer (Back-end Oriented) </span>😎
+                    <span style={{WebkitTextFillColor: "transparent"}} className="bg-clip-text bg-gradient-to-r from-[#6600cc]  to-[#00b3e6]">Softawer Engineer </span>😎
                 </motion.h1>
                 <p className="text-center text-sm md:text-lg mt-8 text-white">
                     Hi, my name is <strong>Alessandro Ferri</strong>, and I have always been passionate about computer science and software development 🚀
