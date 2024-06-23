@@ -21,6 +21,11 @@ export default function Header() {
           </Button>
         </NavbarItem>
         <NavbarItem>
+          <Button as={Link} color="secondary" href="/CV_Alessandro_Ferri.pdf" target="blank" variant="flat">
+            Download CV 📁
+          </Button>
+        </NavbarItem>
+        <NavbarItem>
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
