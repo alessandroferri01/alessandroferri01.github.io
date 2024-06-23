@@ -30,7 +30,7 @@ export default function HeroContent() {
                 </p>
             </div>
             <div className="animation">
-                <Lottie animationData={developer_animation} loop={false} width={800} height={800}/>
+                <Lottie animationData={developer_animation} loop={true} width={800} height={800}/>
             </div>
         </div>
     )
