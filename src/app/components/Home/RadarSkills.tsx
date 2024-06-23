@@ -53,7 +53,7 @@ export default function RadarSkills() {
             pointLabels: {
               color: '#00b3e6',
               font: {
-                size: 12
+                size: 14
               },
               display: !isMobile
             },
