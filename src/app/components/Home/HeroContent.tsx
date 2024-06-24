@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import { motion } from "framer-motion";
+import { Button, Link } from "@nextui-org/react";
 
 //Lottie
 import Lottie from "lottie-react";
@@ -10,6 +10,7 @@ import background_hero from '../../../../public/background_hero.json'
 
 //animation
 import { titleVariants } from "@/utils/animation";
+import { motion } from "framer-motion";
 
 export default function HeroContent() {
     return (
@@ -28,6 +29,14 @@ export default function HeroContent() {
                 <p className="text-center text-sm md:text-lg mt-8 text-white">
                     Hi, my name is <strong>Alessandro Ferri</strong>, and I have always been passionate about computer science and software development 🚀
                 </p>
+                <div className="container-button mt-8 flex flex-row justify-center gap-4">
+                    <Button as={Link} color="primary" href="#" variant="flat">
+                        Say Hello 😎
+                    </Button>
+                    <Button as={Link} color="secondary" href="/CV_Alessandro_Ferri.pdf" target="blank" variant="flat">
+                        Download CV 📁
+                    </Button>
+                </div>
             </div>
             <div className="animation">
                 <Lottie animationData={developer_animation} loop={true} width={800} height={800}/>
