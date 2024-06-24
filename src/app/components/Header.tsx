@@ -23,7 +23,7 @@ export default function Header() {
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem style={{display: !isMobile ? 'block' : 'none'}}>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <Button as={Link} color="primary" href="/contact" variant="flat">
             Say Hello 😎
           </Button>
         </NavbarItem>
