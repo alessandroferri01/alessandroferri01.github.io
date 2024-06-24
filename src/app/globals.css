@@ -82,7 +82,6 @@ footer .icon {
 
 .hero-content .animation {
   width: 100%;
-  margin-bottom: 60px;
 }
 
 .skills {
@@ -146,7 +145,6 @@ footer .icon {
 @media screen and (min-width: 1280px) {
   .hero-content .animation {
     width: 500px;
-    margin-bottom: 30px;
   }
 
   .skills {
