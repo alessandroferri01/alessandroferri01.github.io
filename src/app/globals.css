@@ -82,11 +82,14 @@ footer .icon {
 
 .hero-content .animation {
   width: 100%;
-  margin-bottom: 60px;
 }
 
 .skills {
   padding: 0px 25px 80px;
+}
+
+.essential-skills {
+  padding: 20px 25px 80px;
 }
 
 .skills .skill-card {
@@ -133,15 +136,22 @@ footer .icon {
   .skills {
     padding: 80px 25px;
   }
+
+  .essential-skills {
+    padding: 20px 25px 50px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .hero-content .animation {
     width: 500px;
-    margin-bottom: 30px;
   }
 
   .skills {
     padding: 150px 25px;
+  }
+
+  .essential-skills {
+    padding: 0px 25px 100px;
   }
 }
