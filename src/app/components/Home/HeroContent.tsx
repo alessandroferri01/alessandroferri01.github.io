@@ -30,7 +30,7 @@ export default function HeroContent() {
                     Hi, my name is <strong>Alessandro Ferri</strong>, and I have always been passionate about computer science and software development 🚀
                 </p>
                 <div className="container-button mt-8 flex flex-row justify-center gap-4">
-                    <Button as={Link} color="primary" href="#" variant="flat">
+                    <Button as={Link} color="primary" href="/contact" variant="flat">
                         Say Hello 😎
                     </Button>
                     <Button as={Link} color="secondary" href="/CV_Alessandro_Ferri.pdf" target="blank" variant="flat">
