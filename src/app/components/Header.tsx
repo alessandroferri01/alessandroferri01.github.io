@@ -22,13 +22,13 @@ export default function Header() {
         </Link>
       </NavbarBrand>
       <NavbarContent justify="end">
-        <NavbarItem style={{display: !isMobile ? 'block' : 'none'}}>
+        {/* <NavbarItem style={{display: !isMobile ? 'block' : 'none'}}>
           <Button as={Link} color="primary" href="#" variant="flat">
             Say Hello 😎
           </Button>
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem style={{display: !isMobile ? 'block' : 'none'}}>
-          <Button as={Link} color="secondary" href="/CV_Alessandro_Ferri.pdf" target="blank" variant="flat">
+          <Button as={Link} color="primary" href="/Resume_Alessandro_Ferri.pdf" target="blank" variant="flat">
             Download CV 📁
           </Button>
         </NavbarItem>
