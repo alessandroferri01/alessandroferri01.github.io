@@ -1,0 +1,212 @@
+.heading {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.heading em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.sub {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-12);
+}
+
+/* Education featured card */
+.eduCard {
+  background: linear-gradient(
+    135deg,
+    var(--color-surface-2) 0%,
+    var(--color-surface-1) 100%
+  );
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  margin-bottom: var(--space-12);
+  position: relative;
+  overflow: hidden;
+}
+
+.eduCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent-dim),
+    transparent
+  );
+}
+
+.eduInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.eduBadge {
+  display: inline-flex;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-accent-glow);
+  border: 1px solid oklch(0.72 0.19 230 / 0.25);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.eduContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.eduDegree {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-1);
+}
+
+.eduSchool {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.eduMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.grade {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+}
+
+.year {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.eduDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+/* Certifications grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.card {
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: border-color 250ms var(--ease-out-quart),
+              background 250ms var(--ease-out-quart),
+              transform 200ms var(--ease-out-quart);
+}
+
+.card:hover {
+  border-color: var(--color-accent-dim);
+  background: var(--color-surface-2);
+  transform: translateY(-3px);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.issuer {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-accent-glow);
+  border: 1px solid oklch(0.72 0.19 230 / 0.2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.certTitle {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.tag {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-subtle);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.certYear {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eduContent {
+    flex-direction: column;
+  }
+
+  .eduMeta {
+    align-items: flex-start;
+  }
+}

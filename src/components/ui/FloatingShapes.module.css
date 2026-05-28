@@ -1,0 +1,166 @@
+.container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* ─── RINGS ─── */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ring1 {
+  width: 420px;
+  height: 420px;
+  border: 1.5px solid oklch(0.72 0.19 230 / 0.22);
+  right: -60px;
+  top: 8%;
+  box-shadow: 0 0 80px oklch(0.72 0.19 230 / 0.04);
+  animation: spinRing1 28s linear infinite;
+}
+
+.ring2 {
+  width: 260px;
+  height: 260px;
+  border: 1px solid oklch(0.82 0.14 195 / 0.18);
+  left: 3%;
+  bottom: 16%;
+  animation: spinRing2 20s linear infinite reverse;
+}
+
+.ring3 {
+  width: 150px;
+  height: 150px;
+  border: 1px solid oklch(0.72 0.19 230 / 0.15);
+  left: 30%;
+  top: 12%;
+  animation: spinRing1 35s linear infinite;
+}
+
+@keyframes spinRing1 {
+  0%   { transform: rotateX(72deg) rotateZ(0deg); }
+  100% { transform: rotateX(72deg) rotateZ(360deg); }
+}
+
+@keyframes spinRing2 {
+  0%   { transform: rotateX(62deg) rotateZ(0deg); }
+  100% { transform: rotateX(62deg) rotateZ(360deg); }
+}
+
+/* ─── CUBE ─── */
+.cubeWrap {
+  position: absolute;
+  right: 14%;
+  top: 26%;
+  width: 72px;
+  height: 72px;
+  perspective: 500px;
+}
+
+.cube {
+  width: 72px;
+  height: 72px;
+  transform-style: preserve-3d;
+  animation: rotateCube 16s linear infinite;
+}
+
+@keyframes rotateCube {
+  0%   { transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(380deg) rotateY(360deg) rotateZ(90deg); }
+}
+
+.face {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border: 1px solid oklch(0.72 0.19 230 / 0.35);
+  background: oklch(0.72 0.19 230 / 0.03);
+}
+
+.fFront  { transform: translateZ(36px); }
+.fBack   { transform: translateZ(-36px) rotateY(180deg); }
+.fLeft   { transform: translateX(-36px) rotateY(-90deg); }
+.fRight  { transform: translateX(36px) rotateY(90deg); }
+.fTop    { transform: translateY(-36px) rotateX(90deg); }
+.fBottom { transform: translateY(36px) rotateX(-90deg); }
+
+/* ─── ORB (second cube, smaller) ─── */
+.cube2Wrap {
+  position: absolute;
+  left: 8%;
+  top: 22%;
+  width: 40px;
+  height: 40px;
+  perspective: 300px;
+}
+
+.cube2 {
+  width: 40px;
+  height: 40px;
+  transform-style: preserve-3d;
+  animation: rotateCube 22s linear infinite reverse;
+}
+
+.face2 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid oklch(0.82 0.14 195 / 0.3);
+  background: oklch(0.82 0.14 195 / 0.02);
+}
+
+.f2Front  { transform: translateZ(20px); }
+.f2Back   { transform: translateZ(-20px) rotateY(180deg); }
+.f2Left   { transform: translateX(-20px) rotateY(-90deg); }
+.f2Right  { transform: translateX(20px) rotateY(90deg); }
+.f2Top    { transform: translateY(-20px) rotateX(90deg); }
+.f2Bottom { transform: translateY(20px) rotateX(-90deg); }
+
+/* ─── GRADIENT ORBS ─── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+}
+
+.orb1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(
+    circle at 40% 35%,
+    oklch(0.72 0.19 230 / 0.11),
+    transparent 70%
+  );
+  right: 2%;
+  top: 3%;
+  animation: floatOrb 10s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 230px;
+  height: 230px;
+  background: radial-gradient(
+    circle at 60% 40%,
+    oklch(0.82 0.14 195 / 0.09),
+    transparent 65%
+  );
+  left: 6%;
+  top: 48%;
+  animation: floatOrb 13s ease-in-out infinite 1.5s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-22px) scale(1.05); }
+}
+
+@media (max-width: 768px) {
+  .ring1 { width: 260px; height: 260px; right: -40px; }
+  .ring2 { width: 160px; height: 160px; }
+  .orb1  { width: 240px; height: 240px; filter: blur(40px); }
+  .cube2Wrap { display: none; }
+  .ring3 { display: none; }
+}
