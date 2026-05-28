@@ -42,7 +42,7 @@ export function TiltCard({ children, className, intensity = 9 }: TiltCardProps) 
   };
 
   return (
-    <div style={{ perspective: 900 }}>
+    <div style={{ perspective: 900, height: "100%" }}>
       <motion.div
         ref={ref}
         onMouseMove={handleMouseMove}
