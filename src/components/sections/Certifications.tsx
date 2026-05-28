@@ -38,7 +38,7 @@ export function Certifications() {
 
         <div className={styles.grid}>
           {certifications.map((cert, i) => (
-            <ScrollReveal key={i} delay={i * 0.07}>
+            <ScrollReveal key={i} delay={i * 0.07} className={styles.revealWrapper}>
               <div className={styles.card}>
                 <div className={styles.cardTop}>
                   <span className={styles.issuer}>{cert.issuer}</span>

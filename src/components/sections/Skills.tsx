@@ -20,7 +20,7 @@ export function Skills() {
 
         <div className={styles.grid}>
           {skills.map((group, i) => (
-            <ScrollReveal key={group.category} delay={i * 0.07}>
+            <ScrollReveal key={group.category} delay={i * 0.07} className={styles.revealWrapper}>
               <TiltCard className={styles.card}>
                 <div className={styles.cardHeader}>
                   <span className={styles.dot} />

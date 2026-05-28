@@ -5,7 +5,7 @@ export const profile = {
   phone: "+39 366 921 4789",
   location: "San Cesareo, Rome, Italy",
   linkedin: "https://www.linkedin.com/in/alessandro-ferri-68939818a/",
-  github: "https://github.com/AleFerri01pd",
+  github: "https://github.com/alessandroferri01",
   bio: "Software Engineer with a passion for building scalable, high-performance web applications that integrate AI-driven solutions into enterprise systems. Experienced in full-stack development with React, Node.js, and TypeScript, with a deep commitment to clean architecture and exceptional user experiences.",
 };
 
@@ -111,11 +111,28 @@ export const certifications = [
 
 export const courseraCertifications = [
   {
-    year: "TBD",
-    issuer: "Coursera",
-    title: "Your Coursera Course",
-    topics: ["Topic 1", "Topic 2"],
-    type: "coursera",
+    title: "React Advanced",
+    issuer: "Meta",
+    platform: "Coursera",
+    topics: ["React", "Advanced Patterns", "Performance", "Hooks"],
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/ROUA9TYY0B0F",
+    credential: "ROUA9TYY0B0F",
+  },
+  {
+    title: "React Basics",
+    issuer: "Meta",
+    platform: "Coursera",
+    topics: ["React", "JSX", "Components", "State"],
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/BPJBTJVAHNEJ",
+    credential: "BPJBTJVAHNEJ",
+  },
+  {
+    title: "Version Control",
+    issuer: "Meta",
+    platform: "Coursera",
+    topics: ["Git", "GitHub", "Branching", "Collaboration"],
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/4I4XVKZO67WC",
+    credential: "4I4XVKZO67WC",
   },
 ];
 
