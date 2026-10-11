@@ -73,7 +73,8 @@
   margin-bottom: var(--space-10);
 }
 
-/* ── Meta banner ─────────────────────────────────────── */
+/* ── Meta & Partner banner ───────────────────────────── */
+.partnerBanner,
 .metaBanner {
   display: flex;
   align-items: center;
@@ -92,6 +93,7 @@
   flex-wrap: wrap;
 }
 
+.partnerBanner::before,
 .metaBanner::before {
   content: '';
   position: absolute;
@@ -106,6 +108,7 @@
   );
 }
 
+.partnerBanner::after,
 .metaBanner::after {
   content: '';
   position: absolute;
@@ -117,6 +120,40 @@
     oklch(0.60 0.22 250 / 0.3),
     transparent
   );
+}
+
+.partnerLogos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.partnerItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.partnerDivider {
+  font-size: var(--text-lg);
+  font-weight: 300;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.googleIcon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(66, 133, 244, 0.4));
+}
+
+.googleWordmark {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
 }
 
 .metaLogoWrap {
@@ -160,6 +197,7 @@
   background-clip: text;
 }
 
+.partnerBannerText,
 .metaBannerText {
   display: flex;
   flex-direction: column;
@@ -167,6 +205,7 @@
   flex: 1;
 }
 
+.partnerBannerTitle,
 .metaBannerTitle {
   font-size: var(--text-base);
   font-weight: 600;
@@ -174,11 +213,13 @@
   letter-spacing: -0.01em;
 }
 
+.partnerBannerSub,
 .metaBannerSub {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
 }
 
+.partnerBannerBadge,
 .metaBannerBadge {
   display: inline-flex;
   align-items: center;
@@ -212,7 +253,7 @@
 /* ── Cards grid ──────────────────────────────────────── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
   align-items: stretch;
 }
@@ -250,6 +291,56 @@
     0 0 0 1px oklch(0.60 0.22 250 / 0.15),
     0 8px 32px oklch(0.60 0.22 250 / 0.18),
     0 0 60px oklch(0.70 0.20 290 / 0.08);
+}
+
+.cardMeta {
+  /* Inherits default card styles */
+}
+
+/* Google-specific card styling */
+.cardGoogle {
+  border-color: oklch(0.60 0.16 220 / 0.25);
+}
+
+.cardGoogle:hover {
+  border-color: oklch(0.65 0.18 220 / 0.60);
+  box-shadow:
+    0 0 0 1px oklch(0.65 0.18 220 / 0.15),
+    0 8px 32px oklch(0.60 0.18 220 / 0.20),
+    0 0 60px oklch(0.70 0.18 160 / 0.10);
+}
+
+.cardGoogle .scanLine {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    oklch(0.65 0.18 220 / 0.08) 50%,
+    transparent 100%
+  );
+}
+
+.cardGoogle .cornerGlow {
+  background: radial-gradient(
+    circle at top right,
+    oklch(0.65 0.18 220 / 0.22),
+    transparent 70%
+  );
+}
+
+.cardGoogle .tag {
+  color: oklch(0.72 0.12 210);
+  background: oklch(0.65 0.18 210 / 0.08);
+  border: 1px solid oklch(0.65 0.18 210 / 0.20);
+}
+
+.cardGoogle .credentialLabel {
+  color: oklch(0.65 0.12 210);
+  background: oklch(0.65 0.18 210 / 0.08);
+  border: 1px solid oklch(0.65 0.18 210 / 0.20);
+}
+
+.cardGoogle:hover .verifyLink {
+  color: oklch(0.80 0.18 210);
 }
 
 /* scan-line sweep animation */
@@ -329,6 +420,43 @@
 .metaChipInfinity {
   font-size: 0.85em;
   line-height: 1;
+}
+
+.googleChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: linear-gradient(
+    120deg,
+    oklch(0.55 0.16 240 / 0.20),
+    oklch(0.65 0.18 160 / 0.20)
+  );
+  border: 1px solid oklch(0.65 0.16 200 / 0.35);
+  color: oklch(0.85 0.08 200);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.googleChipIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.defaultChip {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
 }
 
 .courseraChip {
@@ -412,18 +540,20 @@
 }
 
 /* ── Responsive ──────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 
-@media (max-width: 640px) {
-  .grid { grid-template-columns: 1fr; }
-
+  .partnerBanner,
   .metaBanner {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-4);
   }
 
-  .metaBannerBadge { align-self: flex-start; }
+  .partnerBannerBadge,
+  .metaBannerBadge {
+    align-self: flex-start;
+  }
 }

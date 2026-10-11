@@ -16,32 +16,44 @@ export function CourseraCertifications() {
 
       <div className="container">
         <ScrollReveal>
-          <SectionLabel>Coursera × Meta</SectionLabel>
+          <SectionLabel>Coursera Partner Programs</SectionLabel>
           <h2 className={styles.heading}>
-            Certified by <em>Meta</em>
+            Certified by <em>Meta & Google</em>
           </h2>
           <p className={styles.sub}>
-            Official professional certificates issued by Meta through Coursera's
-            industry-recognized program.
+            Official professional certificates issued by Meta and Google through Coursera's
+            industry-recognized programs.
           </p>
         </ScrollReveal>
 
-        {/* Meta banner */}
+        {/* Partners banner */}
         <ScrollReveal delay={0.1}>
-          <div className={styles.metaBanner}>
-            <div className={styles.metaLogoWrap}>
-              <span className={styles.metaInfinity}>∞</span>
-              <span className={styles.metaWordmark}>Meta</span>
+          <div className={styles.partnerBanner}>
+            <div className={styles.partnerLogos}>
+              <div className={styles.partnerItem}>
+                <span className={styles.metaInfinity}>∞</span>
+                <span className={styles.metaWordmark}>Meta</span>
+              </div>
+              <span className={styles.partnerDivider}>&</span>
+              <div className={styles.partnerItem}>
+                <svg className={styles.googleIcon} viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/>
+                  <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                  <path fill="#FBBC05" d="M5.28 14.27c-.24-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.17 0 9.98 0 12s.45 3.83 1.25 5.42l4.03-3.15z"/>
+                  <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                </svg>
+                <span className={styles.googleWordmark}>Google</span>
+              </div>
             </div>
-            <div className={styles.metaBannerText}>
-              <span className={styles.metaBannerTitle}>Meta Professional Certificate Program</span>
-              <span className={styles.metaBannerSub}>
-                Industry-grade curriculum designed and taught by Meta engineers
+            <div className={styles.partnerBannerText}>
+              <span className={styles.partnerBannerTitle}>Industry Professional Certificate Programs</span>
+              <span className={styles.partnerBannerSub}>
+                Industry-grade curriculum designed and taught by Meta engineers and Google AI specialists
               </span>
             </div>
-            <div className={styles.metaBannerBadge}>
+            <div className={styles.partnerBannerBadge}>
               <span className={styles.metaBadgeDot} />
-              Verified
+              Verified Partners
             </div>
           </div>
         </ScrollReveal>
@@ -54,7 +66,7 @@ export function CourseraCertifications() {
                 href={cert.verifyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.card}
+                className={`${styles.card} ${cert.issuer === "Google" ? styles.cardGoogle : styles.cardMeta}`}
                 whileHover={{ y: -6, scale: 1.015 }}
                 transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
               >
@@ -65,10 +77,24 @@ export function CourseraCertifications() {
                 <span className={styles.cornerGlow} aria-hidden="true" />
 
                 <div className={styles.cardHeader}>
-                  <span className={styles.metaChip}>
-                    <span className={styles.metaChipInfinity}>∞</span>
-                    Meta
-                  </span>
+                  {cert.issuer === "Meta" ? (
+                    <span className={styles.metaChip}>
+                      <span className={styles.metaChipInfinity}>∞</span>
+                      Meta
+                    </span>
+                  ) : cert.issuer === "Google" ? (
+                    <span className={styles.googleChip}>
+                      <svg className={styles.googleChipIcon} viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/>
+                        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                        <path fill="#FBBC05" d="M5.28 14.27c-.24-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.17 0 9.98 0 12s.45 3.83 1.25 5.42l4.03-3.15z"/>
+                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                      </svg>
+                      Google
+                    </span>
+                  ) : (
+                    <span className={styles.defaultChip}>{cert.issuer}</span>
+                  )}
                   <span className={styles.courseraChip}>Coursera</span>
                 </div>
 

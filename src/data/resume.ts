@@ -111,6 +111,14 @@ export const certifications = [
 
 export const courseraCertifications = [
   {
+    title: "AI Fundamentals",
+    issuer: "Google",
+    platform: "Coursera",
+    topics: ["Generative AI", "Prompt Engineering", "Model Evaluation", "AI Ethics"],
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/4L5GIKUYT296",
+    credential: "4L5GIKUYT296",
+  },
+  {
     title: "React Advanced",
     issuer: "Meta",
     platform: "Coursera",
