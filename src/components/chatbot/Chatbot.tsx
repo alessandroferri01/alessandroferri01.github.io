@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import OpenAI from "openai";
-import { profile, skills, experiences, certifications, education } from "../../data/resume";
+import { profile, skills, experiences, certifications, courseraCertifications, education } from "../../data/resume";
 import styles from "./Chatbot.module.css";
 
 interface Message {
@@ -31,6 +31,9 @@ ${skills.map(s => `• ${s.category}: ${s.items.join(", ")}`).join("\n")}
 
 === CERTIFICATIONS ===
 ${certifications.map(c => `• ${c.title} — ${c.issuer} (${c.year})${c.grade ? ` — Grade: ${c.grade}` : ""}\n  Topics: ${c.topics.join(", ")}`).join("\n\n")}
+
+=== COURSERA VERIFIED CERTIFICATES ===
+${courseraCertifications.map(c => `• ${c.title} — ${c.issuer} (${c.platform})\n  Credential ID: ${c.credential}\n  Topics: ${c.topics.join(", ")}`).join("\n\n")}
 
 Always respond in the same language the user uses. Be helpful and concise.`;
 
