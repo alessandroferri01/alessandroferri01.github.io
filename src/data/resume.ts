@@ -111,6 +111,14 @@ export const certifications = [
 
 export const courseraCertifications = [
   {
+    title: "AI for App Building",
+    issuer: "Google",
+    platform: "Coursera",
+    topics: ["Generative AI", "AI Studio", "Vibe Coding", "Web Apps"],
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/64QPDNLJ82WC",
+    credential: "64QPDNLJ82WC",
+  },
+  {
     title: "AI Fundamentals",
     issuer: "Google",
     platform: "Coursera",
